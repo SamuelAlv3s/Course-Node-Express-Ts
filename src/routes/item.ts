@@ -13,6 +13,6 @@ router.get("/", getItens);
 router.get("/:id", getItem);
 router.post("/", createItem);
 router.put("/:id", updateItem);
-router.delete("/", deleteItem);
+router.delete("/:id", deleteItem);
 
 export { router };

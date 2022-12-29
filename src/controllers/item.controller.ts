@@ -5,7 +5,7 @@ import {
   getCarById,
   updateCar,
   deleteCar,
-} from "../services/item";
+} from "../services/item.service";
 import { handlerHttp } from "../utils/error.handler";
 
 const createItem = async (req: Request, res: Response) => {

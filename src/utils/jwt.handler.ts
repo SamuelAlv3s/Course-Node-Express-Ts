@@ -7,6 +7,10 @@ const generateToken = (id: string) => {
   return jwt;
 };
 
-const verifyToken = (token: string) => {};
+const verifyToken = (token: string) => {
+  const tokenWithoutBearer = token.replace("Bearer ", "");
+  const jwtValid = verify(tokenWithoutBearer, JWT_SECRET);
+  return jwtValid;
+};
 
 export { generateToken, verifyToken };

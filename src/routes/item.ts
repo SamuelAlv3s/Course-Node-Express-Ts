@@ -7,10 +7,11 @@ import {
   updateItem,
 } from "../controllers/item.controller";
 import { logMiddleware } from "../middlewares/log";
+import { sessionMiddleware } from "../middlewares/session";
 
 const router = Router();
 
-router.get("/", getItens);
+router.get("/", sessionMiddleware, getItens);
 router.get("/:id", logMiddleware, getItem);
 router.post("/", createItem);
 router.put("/:id", updateItem);
